@@ -81,6 +81,7 @@ THIRD_PARTY_APPS = [
     "corsheaders",
     'django_browser_reload',
     "drf_spectacular",
+    "bootstrap_datepicker_plus",
 ]
 
 LOCAL_APPS = [

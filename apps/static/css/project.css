@@ -11,4 +11,19 @@
     background-color: #f2dede;
     border-color: #eed3d7;
   }
+
+  .container {
+    max-width: 600px;
+    background-color: black;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
   

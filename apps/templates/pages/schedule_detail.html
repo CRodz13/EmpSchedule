@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Schedule Detail</h1>
+  <table>
+    <tr>
+      <th>User:</th>
+      <td>{{ object.user }}</td>
+    </tr>
+    <tr>
+      <th>Date:</th>
+      <td>{{ object.date }}</td>
+    </tr>
+    <tr>
+      <th>Start Time:</th>
+      <td>{{ object.start_time }}</td>
+    </tr>
+    <tr>
+      <th>End Time:</th>
+      <td>{{ object.end_time }}</td>
+    </tr>
+    <tr>
+      <th>Biweekly Schedule:</th>
+      <td>{{ object.biweekly_schedule }}</td>
+    </tr>
+  </table>
+{% endblock %}

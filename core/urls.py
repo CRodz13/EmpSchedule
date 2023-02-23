@@ -11,10 +11,13 @@ from rest_framework.authtoken.views import obtain_auth_token
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     path("about/", TemplateView.as_view(template_name="pages/about.html"), name="about"),
+    path("schedule_entry/", TemplateView.as_view(template_name="pages/schedule_entry.html"), name="schedule_entry"),
+    path("schedule_list/", TemplateView.as_view(template_name="pages/schedule_list.html"), name="schedule_list"),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
     path("users/", include("apps.users.urls", namespace="users")),
+    path("schedules/", include("apps.schedule.urls", namespace="schedules")),
     path("accounts/", include("allauth.urls")),
     path("__reload__/", include("django_browser_reload.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

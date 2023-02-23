@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto">
+    <h1 class="mb-4">Employee Schedule Entry</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="row mb-3">
+            <label for="employeeName" class="col-sm-2 col-form-label">Employee Name</label>
+            <div class="col-sm-10">
+                <select class="form-select" aria-label="Employee Name" id="employeeName" name="employee_name">
+                    <option selected disabled>Select an employee</option>
+                    {% for schedule in schedules %}
+                    <option value="{{ schedule.user }}">{{ schedule.user }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="date" class="col-sm-2 col-form-label">Date</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control" id="date" name="date">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="startTime" class="col-sm-2 col-form-label">Start Time</label>
+            <div class="col-sm-10">
+                <input type="time" class="form-control" id="startTime" name="start_time">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="endTime" class="col-sm-2 col-form-label">End Time</label>
+            <div class="col-sm-10">
+                <input type="time" class="form-control" id="endTime" name="end_time">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="notes" class="col-sm-2 col-form-label">Notes</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" id="notes" rows="3" name="notes"></textarea>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-sm-10 offset-sm-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

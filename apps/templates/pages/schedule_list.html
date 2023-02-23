@@ -2,9 +2,9 @@
 
 {% block content %}
 
-<div class="container mx-auto">
+<div class="container mx-auto text-primary">
     <h1 class="mb-4">Schedule List</h1>
-    <table class="table">
+    <table class="table text-primary">
         <thead>
             <tr>
                 <th>User</th>
@@ -17,14 +17,12 @@
         <tbody>
             
             {% for schedule in schedules %}
-            <tr>
-                
+            <tr>          
                 <td>{{ schedule.user }}</td>
                 <td>{{ schedule.date }}</td>
                 <td>{{ schedule.start_time }}</td>
                 <td>{{ schedule.end_time }}</td>
-                <td>{{ schedule.get_biweekly_schedule_display }}</td>
-              
+                <td>{{ schedule.get_biweekly_schedule_display }}</td>       
             </tr>
             {% endfor %}
         </tbody>

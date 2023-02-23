@@ -1,4 +1,5 @@
 from pathlib import Path
+from decouple import config
 
 import environ
 
@@ -36,12 +37,12 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'emp_schedule',
-        'USER': 'postgres',
-        'PASSWORD': 'Usaf1313$',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
     }
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True

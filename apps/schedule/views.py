@@ -17,18 +17,17 @@ schedule_entry_view = ScheduleEntryView.as_view()
 
 class ScheduleListView(ListView):
     model = Schedule
-    template_name = 'schedule_list.html'
+    template_name = 'pages/schedule_list.html'
     context_object_name = 'schedules'
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        print(queryset)
+        print(queryset)  
         return queryset
 
-    def get(self, request, *args, **kwargs):
-        print('ListView.get() is being called')
-        return super().get(request, *args, **kwargs)
-
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
 
 schedule_list_view = ScheduleListView.as_view()
 
